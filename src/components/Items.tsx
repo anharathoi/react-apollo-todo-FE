@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useQuery, useMutation, gql } from "@apollo/client";
+import React from "react";
+import { useMutation, gql } from "@apollo/client";
 import AddItem from "./AddItem";
 import styled from "styled-components";
 
@@ -8,16 +8,6 @@ interface Item {
   title: string;
   done: boolean;
 }
-
-const GET_ITEM = gql`
-  query GetItem($id: Int!) {
-    getItem(id: $id) {
-      id
-      title
-      done
-    }
-  }
-`;
 
 const DELETE_ITEM = gql`
   mutation deleteItem($id: Int!) {
